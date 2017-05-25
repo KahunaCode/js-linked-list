@@ -11,19 +11,33 @@ function linkedListGenerator(){
   }
 
   function getTail(){
-
+    return ;
   }
 
   function add(val){
-   if (head === null){
-    head = {value: val,
-            next: null};
-            console.log("head is " +head.next);
-
-  }else{
-    console.log("adsf");
+    var node = {value: val,
+              next: null
+    };
+    if (!head){
+      head = node;
+    }else{
+      current = head;
+      while(current.next){
+        current = current.next;
+      }
+      current.next = node;
+    }
   }
-}
+
+  //  if (head === null){
+  //   head = {value: val,
+  //           next: null};
+  //           console.log("head is " +head);
+
+  // }else{
+  //   console.log("adsf");
+  // }
+
   // head = {value: val,
   //         next: null,
   //         _length : 0};
@@ -52,7 +66,7 @@ var myLL = linkedListGenerator();
 
 myLL.add("james");
 myLL.add("dory");
-console.log(myLL.getHead().next);
-
+myLL.add("jeff");
+console.log(myLL.getHead());
 
 //for (var i = 0; i<)
