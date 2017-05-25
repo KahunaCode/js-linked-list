@@ -11,9 +11,15 @@ function linkedListGenerator(){
   }
 
   function getTail(){
-    return ;
+    if (!head) {
+      return null;
+    }else{
+    while(head.next){
+      head = head.next;
+      return head.next;
+    }
   }
-
+}
   function add(val){
     var node = {value: val,
               next: null
@@ -27,21 +33,9 @@ function linkedListGenerator(){
       }
       current.next = node;
     }
+    return node;
   }
 
-  //  if (head === null){
-  //   head = {value: val,
-  //           next: null};
-  //           console.log("head is " +head);
-
-  // }else{
-  //   console.log("adsf");
-  // }
-
-  // head = {value: val,
-  //         next: null,
-  //         _length : 0};
-  // }
   function remove(){
   }
 
@@ -68,5 +62,4 @@ myLL.add("james");
 myLL.add("dory");
 myLL.add("jeff");
 console.log(myLL.getHead());
-
-//for (var i = 0; i<)
+console.log(myLL.getTail());
