@@ -129,7 +129,10 @@ describe('Linked List Generator', function() {
       it('`tail` should reference the most recently added node', function () {
         // add new nodes
         newLinkedListC.add('http://eff.org')
+        console.log(newLinkedListC.getHead())
         newLinkedListC.add('http://devleague.com');
+        console.log("----")
+        console.log(newLinkedListC.getTail().value);
 
         // tests!
         // console.log(newLinkedListC.getHead());
