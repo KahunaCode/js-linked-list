@@ -6,6 +6,7 @@
 function linkedListGenerator(){
   var head = null;
 
+
   function getHead(){
     return head;
   }
@@ -16,8 +17,7 @@ function linkedListGenerator(){
     }else{
     while(head.next){
       head = head.next;
-      return head.next;
-    }
+    }return head;
   }
 }
   function add(val){
