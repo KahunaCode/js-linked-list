@@ -7,6 +7,12 @@ function linkedListGenerator(){
   var head = null;
   var tail = null;
 
+  function genNode(val){
+    var node = {value: val,
+                next: null
+    }
+  }
+
   function getHead(){
     return head;
   }
