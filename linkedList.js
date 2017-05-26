@@ -78,6 +78,7 @@ function linkedListGenerator(){
   }
 
   function insert(){
+
   }
 
 
