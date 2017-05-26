@@ -30,9 +30,32 @@ function linkedListGenerator(){
     return node;
   }
 
-  function remove(){
-  }
+  function remove(num){
+    var currentNode = head;
+    var counter = 0;
 
+    if (get(num)===false){
+      return false;
+    }
+    else {
+      if (num === 0) {
+        head = currentNode.next;
+      }
+      else {
+        while (counter < num) {
+          prevNode = currentNode;
+          currentNode = currentNode.next;
+          counter +=1;
+        }
+
+        prevNode.next = currentNode.next;
+        if (prevNode.next===null){ //removed last item
+          tail = prevNode;
+        }
+      }
+      return currentNode;
+    }
+  }
   function get(num){
     var counter = 0;
     var currentNode = null;
@@ -68,3 +91,13 @@ function linkedListGenerator(){
   };
 
 }
+
+var ll = linkedListGenerator();
+ll.add("one");
+ll.add("two");
+ll.add("three");
+
+console.log(ll.getHead().next.next.value);
+console.log(ll.getTail().value);
+ll.remove(2);
+console.log(ll.getTail().value);
