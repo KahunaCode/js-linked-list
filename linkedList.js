@@ -77,9 +77,32 @@ function linkedListGenerator(){
     return currentNode;
   }
 
-  function insert(){
+  function insert(value, number){ //the thing i'm inserting and the place
+    console.log(number);
+    var currentNode = head;
+    var counter = 0;
+    var addedNode = {
+      value: value,
+      next: null
+    };
+    if (get(number)===false || number < 0){
+      return false;
+    } else if (number === 0) {
+      addedNode.next = head;
+      head = addedNode;
+    } else {
+      var prevNode = get(number-1);
+      var targetNode = get(number);
+      var nextNode = get(number+1);
 
+      prevNode.next = addedNode;
+      addedNode.next = targetNode;
+
+      return currentNode;
+
+    }
   }
+
 
 
   return {
@@ -93,12 +116,16 @@ function linkedListGenerator(){
 
 }
 
-var ll = linkedListGenerator();
-ll.add("one");
-ll.add("two");
-ll.add("three");
+// var ll = linkedListGenerator();
+// ll.add("aaa");
+// ll.add("bbb");
+// // ll.add("ccc");
 
-console.log(ll.getHead().next.next.value);
-console.log(ll.getTail().value);
-ll.remove(2);
-console.log(ll.getTail().value);
+// console.log(ll.getHead());
+
+// ll.insert(1, "eee");
+//console.log(ll.getHead());
+// console.log(ll.getHead().next.next.value);
+// console.log(ll.getTail().value);
+// ll.remove(2);
+// console.log(ll.getTail().value);
